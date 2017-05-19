@@ -48,7 +48,10 @@ Article.loadAll = rows => {
   Article.all.push(new Article(ele));
 });
 */
-
+  //  console.log(rawData);
+  Article.all = rows.map(function(justintheman){
+    return new Article(justintheman);
+  })
 };
 
 Article.fetchAll = callback => {
