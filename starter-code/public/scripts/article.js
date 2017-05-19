@@ -1,6 +1,7 @@
 'use strict';
 var app = app || {};
 
+(function(module){
 // REVIEW: Check out all of the functions that we've cleaned up with arrow function syntax.
 
 // TODO: Wrap the contents of this file, except for the preceding 'use strict' and 'var app...' declararions, in an IIFE.
@@ -47,7 +48,10 @@ Article.loadAll = rows => {
   Article.all.push(new Article(ele));
 });
 */
-
+  //  console.log(rawData);
+  Article.all = rows.map(function(justintheman){
+    return new Article(justintheman);
+  })
 };
 
 Article.fetchAll = callback => {
@@ -128,3 +132,5 @@ Article.prototype.updateRecord = function(callback) {
   .then(console.log)
   .then(callback);
 };
+  module.Article = Article;
+}(app));

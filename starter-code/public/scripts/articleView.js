@@ -1,6 +1,7 @@
 'use strict';
 var app = app || {};
 
+(function(module) {
 // TODO: Wrap the contents of this file, except for the preceding 'use strict' and 'var app...' declararions, in an IIFE.
 // Give the IIFE a parameter called 'module'.
 // At the very end of the code, but still inside the IIFE, attach the 'articleView' object to 'module'.
@@ -147,3 +148,7 @@ articleView.initAdminPage = function() {
   $('#blog-stats .articles').text(app.Article.all.length);
   $('#blog-stats .words').text(app.Article.numWordsAll());
 };
+
+module.articleView = articleView;
+
+})(app);
