@@ -179,6 +179,6 @@ function loadDB() {
       body TEXT NOT NULL
     );`
   )
-  .then(loadArticles
-  .catch(console.error);
+  .then(loadArticles)
+  .catch(console.error)
 }
